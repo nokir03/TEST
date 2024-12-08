@@ -1,4 +1,3 @@
-````markdown
 # How to Run the Code
 
 ## Prerequisites
