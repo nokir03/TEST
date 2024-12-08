@@ -1,92 +1,74 @@
-# How to Run the Code
+```markdown
+# Prerequisites
 
-## Prerequisites
+To run this code, you need Python installed on your computer. You can run the code using any Integrated Development Environment (IDE), such as VSCode, PyCharm, or others. The code can also be run from the terminal.
 
-To run this code, you need Python installed on your computer. You can execute the code using any Integrated Development Environment (IDE), such as **VSCode**, **PyCharm**, or others. The code can also be run directly from the terminal.
+## Virtual Environment (optional)
 
----
+A virtual environment (VENV) can be used when running the code. It is not mandatory. The following steps show how a VENV can be created. It is done by writing the presented lines in the terminal.
 
-## Virtual Environment (Optional)
+1. **Create the virtual environment:**
 
-A virtual environment (VENV) can be used when running the code. While it is not mandatory, it is recommended for managing dependencies. Follow these steps to create a virtual environment:
+   ```
+   python -m venv env
+   ```
 
-### Step 1: Create the Virtual Environment
+2. **Activate the virtual environment:**
 
-```bash
-python -m venv env
-```
-````
+   - Windows:
+     ```
+     .\env\Scripts\activate
+     ```
+   - Mac/Linux:
+     ```
+     source env/bin/activate
+     ```
 
-### Step 2: Activate the Virtual Environment
+3. Next, install the required packages. After activating the virtual environment or even using one, install the necessary Python packages by running the following command:
 
-#### Windows:
+   ```
+   pip install numpy torch torchvision scikit-learn matplotlib seaborn tabulate
+   ```
 
-```bash
-.\env\Scripts\activate
-```
-
-#### Mac/Linux:
-
-```bash
-source env/bin/activate
-```
-
----
-
-## Installing Required Packages
-
-After activating the virtual environment (or if you’re not using one), install the necessary Python packages by running the following command:
-
-```bash
-pip install numpy torch torchvision scikit-learn matplotlib seaborn tabulate
-```
-
-If you are not using a virtual environment, ensure the packages are installed globally.
+   If you are not using a virtual environment, ensure the packages are installed globally.
 
 ---
 
-## Setting Up the Project
+## Project Setup
 
-1. **Download the Project**: Download the project from GitHub as a ZIP file and extract it.
-2. **Add Required Folders**: Place the **`src`** and **`datasets`** folders in your working directory.
-3. **Set Up Datasets**: To test the code with full datasets, download the datasets from the **project guidelines PDF** and add them to the **`datasets`** folder.
+1. Download the project from GitHub as a zip file and extract it. Once this is done, add the `src` and `datasets` folders to your work directory.
+
+2. To test the code with full datasets, download the project datasets from the project guidelines PDF and add them to the `datasets` folder.
 
 ---
 
 ## Running the Code
 
-### Step 1: Data Cleaning
+1. Once the datasets are properly set up, you can run the code from the terminal. Navigate to the `data-exploration` directory by running:
 
-Navigate to the `data-exploration` directory and run the following command in your terminal:
+   ```
+   cd data-exploration
+   ```
 
-```bash
-cd data-exploration
-python DatasetsCleaning.py
-```
+2. Run the following command:
 
-This will generate a `processed` folder containing all the processed images and `.npz` files. These files will be used in subsequent steps to speed up processing.
+   ```
+   python DatasetsCleaning.py
+   ```
 
-### Step 2: Model Training
+   The code will generate a `processed` folder with all the processed images, as well as `.npz` files, which will be used for the rest of the code to speed up the process.
 
-Once the data is processed, navigate to the `model-training` folder and run the following command:
+3. Once this is done, navigate to the `model-training` folder and run:
 
-```bash
-cd ../model-training
-python main.py
-```
+   ```
+   python main.py
+   ```
 
-This command will train the model from scratch and generate a `.pth` file in the `processed` folder.
+   This will train the model from scratch and add its `.pth` file to the `processed` folder.
 
-### Step 3: Conducting Tests
+4. To conduct tests, navigate to the folder containing the Python files needed to be run, and execute the following command in the terminal:
 
-After training the model, navigate to the folder containing the required Python scripts for testing. Run the desired script using the following command:
-
-```bash
-python "name_of_python_file.py"
-```
-
-Replace **`name_of_python_file.py`** with the actual file name you wish to execute.
-
-```
-
+   ```
+   python "name_of_python_file.py"
+   ```
 ```
